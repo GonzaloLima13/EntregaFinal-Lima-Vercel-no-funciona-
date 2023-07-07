@@ -4,11 +4,8 @@ import "./cartwidget.css"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faShoppingCart
-} from '@fortawesome/free-solid-svg-icons';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
   return (
@@ -24,11 +21,8 @@ const NavBar = () => {
             <Nav.Link href="#about">Sobre Nosotros</Nav.Link>
             <Nav.Link href="#contact">Contacto</Nav.Link>
             <Nav.Link href="#link">Social</Nav.Link>
+            <CartWidget />
           </Nav>
-          <div className="cart-widget">
-            <FontAwesomeIcon icon={faShoppingCart} size="2x"/>
-            <div className="qty-display">0</div>
-          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>                
