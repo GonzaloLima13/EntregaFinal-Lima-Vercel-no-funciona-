@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import Header from './components/header/Header'
-import Home from './components/home/Home'
+import NavBar from './components/navbar/NavBar'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import About from './components/about/About'
 
 function App() {
@@ -10,8 +10,8 @@ function App() {
 
   return (
     <div>
-    <Header />
-    <Home />
+    <NavBar />
+    <ItemListContainer />
     <About />
     </div>
   )

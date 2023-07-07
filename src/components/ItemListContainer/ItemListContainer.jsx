@@ -1,7 +1,7 @@
 import React from "react";
-import "./home.css";
+import "./itemlistcontainer.css";
 
-const Home = () => {
+const ItemListContainer = () => {
   return (
     <div>
       <div className="jumbotron">
@@ -23,4 +23,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ItemListContainer;
