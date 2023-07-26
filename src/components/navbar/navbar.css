@@ -1,0 +1,29 @@
+.navbar{
+    padding: 15px 0;
+    position: sticky;
+    border-bottom: 1px solid #c2c2c22f;
+    background-color: #090202;
+    font-family: Quicksand;
+}
+
+.navbar__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__items{
+    display: flex;
+    gap: 24px;
+    font-size: 18px;
+}
+.navbar__items a{
+    color: #c2c2c2;
+}
+.navbar__items a:hover{
+    filter: brightness(1.3)
+}
+.navbar__logo{
+    max-width: 100px;
+    cursor: pointer;
+}

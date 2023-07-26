@@ -1,35 +1,59 @@
-import React from 'react';
-import "./navbar.css";
-import "./cartwidget.css"
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidget from '../CartWidget/CartWidget';
+import "./NavBar.css";
+import { CartWidget } from "../CartWidget/CartWidget";
+import { NavLink, Outlet } from "react-router-dom";
 
-const NavBar = () => {
+export const NavBar = () => {
   return (
-    <div>
+    <>
+      <header className="navbar">
+        <div className="container">
+          <div className="navbar__content">
+            <NavLink to="/">
+              <img
+                className="navbar__logo"
+                src="https://i.redd.it/pw9s6kvxgea41.png"
+              />
+            </NavLink>
+            <nav className="navbar__items">
+              <NavLink
+                to={"/category/accion"}
+                style={({ isActive }) => ({
+                  color: isActive ? "#51c363" : "#8686d2",
+                })}
+              >
+                Acción
+              </NavLink>
+              <NavLink
+                to={"/category/aventura"}
+                style={({ isActive }) => ({
+                  color: isActive ? "#51c363" : "#8686d2",
+                })}
+              >
+                Aventura
+              </NavLink>
+              <NavLink
+                to={"/category/simulador"}
+                style={({ isActive }) => ({
+                  color: isActive ? "#51c363" : "#8686d2",
+                })}
+              >
+                Simulador
+              </NavLink>
+              <NavLink
+                to={"/category/carrera"}
+                style={({ isActive }) => ({
+                  color: isActive ? "#51c363" : "#8686d2",
+                })}
+              >
+                Carrera
+              </NavLink>
 
-<Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home">GL Lures</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#about">Sobre Nosotros</Nav.Link>
-            <Nav.Link href="#contact">Contacto</Nav.Link>
-            <Nav.Link href="#link">Social</Nav.Link>
+            </nav>
             <CartWidget />
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>                
-
-
-    </div>
-  )
-}
-
-export default NavBar
+          </div>
+        </div>
+      </header>
+      <Outlet />
+    </>
+  );
+};

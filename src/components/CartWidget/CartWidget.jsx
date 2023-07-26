@@ -1,17 +1,8 @@
-import React from "react";
-import "./cartwidget.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faShoppingCart
-} from '@fortawesome/free-solid-svg-icons';
+import { GiShoppingCart } from "react-icons/gi";
+import "./CartWidget.css";
 
-const CartWidget = () => {
-  return (
-      <div className="cart-widget">
-            <FontAwesomeIcon icon={faShoppingCart} size="2x"/>
-            <div className="qty-display">0</div>
-          </div>
-  );
-};
-
-export default CartWidget;
+export const CartWidget = () => (
+  <div className="cart-widget">
+    <GiShoppingCart /> <span className="cart-widget__qty">(3)</span>
+  </div>
+);

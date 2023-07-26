@@ -1,26 +1,17 @@
-import React from "react";
+import { Item } from "../Item/Item"
 import "./itemlistcontainer.css";
 
-const ItemListContainer = () => {
-  return (
-    <div>
-      <div className="jumbotron">
-        <h1 className="display-4">Bienvenidos a tu casa de señuelos.</h1>
-        <p className="lead">
-          This is a simple hero unit, a simple jumbotron-style component for
-          calling extra attention to featured content or information.
-        </p>
-        <hr className="my-4" />
-        <p>
-          It uses utility classes for typography and spacing to space content
-          out within the larger container.
-        </p>
-        <a className="btn btn-primary btn-lg" href="#" role="button">
-          Learn more
-        </a>
-      </div>
-    </div>
-  );
-};
-
-export default ItemListContainer;
+export const ItemListContainer = ({ products }) => (
+  <div className="item-list">
+    {products.map((product) => (
+      <Item
+        key={product.id}
+        id={product.id}
+        img={product.img}
+        category={product.category}
+        title={product.title}
+        price={product.price}
+      />
+    ))}
+  </div>
+);
