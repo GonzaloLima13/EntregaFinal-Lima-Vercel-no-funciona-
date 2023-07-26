@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss'
-import { NavBar, ItemCount, ItemListContainer, Item } from "./components";
+import { NavBar, ItemCount, ItemListContainer, Item } from "./components/index";
 import { Detail } from "./pages/Detail"
 import { Home } from "./pages/Home"
 import { Category } from "./pages/Category"
