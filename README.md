@@ -68,14 +68,12 @@ Entrega final para cursada de ReactJS en Coderhouse. E-commerce orientado a vide
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
+* [![Firebase][Firebase]][Firebase-url]
+* [![Vercel][Vercel]][Vercel-url]
+* [![React-Hook-Form][React-Hook-Form]][React-Hook-Form-url]
+* [![React-router-dom][React-router-dom]][React-router-dom-url]
 
 <p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
@@ -143,4 +141,14 @@ Link al proyecto:: [https://github.com/GonzaloLima13/EntregaFinal-Lima.git](http
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[JQuery-url]: https://jquery.com
+[Vercel]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
+[Vercel-url]: https://vercel.com
+[Firebase]: https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white
+[Firebase-url]: https://firebase.google.com/
+[React-Hook-Form]: https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white
+[React-Hook-Form-url]: https://www.react-hook-form.com
+[TailwindCSS]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[TailwindCSS-url]: https://tailwindcss.com
+[React-router-dom]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
+[React-router-dom-url]: https://reactrouter.com/en/main
