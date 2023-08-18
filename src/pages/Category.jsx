@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getGameByGenre, getGenre  } from "../lib/game.requests";
 import {ItemListContainer} from "../components/ItemListContainer/ItemListContainer";
 import { Loader } from "../components/Loader/Loader";
-import { ContentWrap } from "../components/ContentWrap/ContentWrap";
+import ContentWrap from "../components/ContentWrap/ContentWrap";
 
 export const GameGenre = () => {
   const { genreId } = useParams();

@@ -1,4 +1,4 @@
-import  Navbar  from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/navbar";
 import { Footer } from "./components/Footer/Footer";
 import {
   Route,
@@ -11,16 +11,16 @@ import { Home } from "./pages/Home"
 import { GameGenre } from "./pages/Category"
 import { CartProvider } from "./state/Cart.context";
 import { ThemeProvider } from "./state/Theme.context";
-import { Cart } from "./pages/Cart";
+import Cart from "./pages/Cart";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<Navbar />}> {}
-        <Route path="/" element={<Home />} />
-        <Route path="/game/:id" element={<Detail />} />
-        <Route path="/genres/:genresId" element={<GameGenre />} />
-        <Route path="/cart" element={ <Cart /> }/>
-        <Route path="*" element={<Home />} />
+    <Route element={<Navbar />}> { }
+      <Route path="/" element={<Home />} />
+      <Route path="/game/:id" element={<Detail />} />
+      <Route path="/genres/:genresId" element={<GameGenre />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="*" element={<Home />} />
     </Route>
   )
 );
@@ -28,7 +28,7 @@ const routes = createBrowserRouter(
 function App() {
   return (
     <div className="flex min-h-screen w-full flex-col items-center">
-    <ThemeProvider>
+      <ThemeProvider>
         <CartProvider>
           <RouterProvider router={routes} />
           <Footer />

@@ -1,60 +1,67 @@
-import { getDocs, collection, getDoc, doc, addDoc, writeBatch, increment } from "firebase/firestore";
+import {
+  getDocs,
+  collection,
+  getDoc,
+  doc,
+  addDoc,
+  writeBatch,
+  increment,
+} from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
 
-const gamesRef = collection(db, "Items");
+const gamesCollection = collection(db, "Items");
+const genresCollection = collection(db, "genres");
 
 export const getGenre = async (genreId) => {
-  const genreDocument = doc(db, "genres", genreId);
-  const genreDocSnapshot = await getDoc(genreDocument);
-  if (genreDocSnapshot.exists())
+  const genreDocRef = doc(genresCollection, genreId);
+  const genreDocSnapshot = await getDoc(genreDocRef);
+
+  if (genreDocSnapshot.exists()) {
     return { id: genreDocSnapshot.id, ...genreDocSnapshot.data() };
+  }
 
   return null;
 };
 
 export const getGames = async () => {
-  let games = [];
-  const querySnapshot = await getDocs(gamesRef);
-  querySnapshot.forEach((doc) => {
-    games = [...games, { ...doc.data(), id: doc.id }];
-  });
+  const querySnapshot = await getDocs(gamesCollection);
+  const games = querySnapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+
   return games;
 };
 
 export const getGameById = async (id) => {
-  const itemsDocument = doc(db, "Items", id);
-  const itemsDocSnapshot = await getDoc(itemsDocument);
-  if (itemsDocSnapshot.exists()) {
-    let game = { id: itemsDocSnapshot.id, ...itemsDocSnapshot.data() };
-    return game;
+  const gameDocRef = doc(gamesCollection, id);
+  const gameDocSnapshot = await getDoc(gameDocRef);
+
+  if (gameDocSnapshot.exists()) {
+    return { id: gameDocSnapshot.id, ...gameDocSnapshot.data() };
   }
 
   return null;
 };
 
 export const getGameByGenre = async (genreId) => {
-  let gamesGenre = await getGames()
-  const games = gamesGenre.filter((game) => {
-    return game.genres.some(genre => genreId === genre.id)
-  });
-  return games;
+  const games = await getGames();
+  const gamesByGenre = games.filter((game) =>
+    game.genres.some((genre) => genre.id === genreId)
+  );
+
+  return gamesByGenre;
 };
 
-// export const getGameByCategory = async (categoryId) => {
-//   const querySnapshot = await getDocs(collection(db, "Items").where("category", "==", categoryId));
-//   const games = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-//   return games;
-// };
-
 export const updateGames = async (items) => {
+  const batch = writeBatch(db);
 
-  const batch = writeBatch(db)
+  items.forEach(({ id, cantidad }) => {
+    const gameDocRef = doc(gamesCollection, id);
+    batch.update(gameDocRef, {
+      stock: increment(-cantidad),
+    });
+  });
 
-  items.forEach(({id, cantidad}) => {
-    batch.update(doc(db,'Items',id), {
-      stock: increment(-cantidad)
-    })
-  })
-
-  batch.commit()
+  await batch.commit();
 };

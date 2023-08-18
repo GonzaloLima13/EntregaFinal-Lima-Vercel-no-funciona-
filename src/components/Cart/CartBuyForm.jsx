@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useCartContext } from "../../state/Cart.context";
 import { FormErrorsMessage } from "./FormErrorsMessage";
-import { addOrder } from "../../lib/orders.request";
+import addOrder from "../../lib/orders.request";
 import { updateGames } from "../../lib/game.requests";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

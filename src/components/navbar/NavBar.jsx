@@ -1,16 +1,16 @@
 import { CartWidget } from "../CartWidget/CartWidget";
 import { Outlet } from "react-router-dom";
 import MenuItems from "../Menu/MenuItems";
-import Logito from "./Logito";
+import Logotipo from "./Logotipo";
 
 const Navbar = () => {
   return (
     <>
-      <nav className="flex w-full justify-between bg-slate-900 p-3 shadow-md">
-        <Logito />
+      <div className="flex w-full justify-between bg-gradient-to-b from-sky-900 via-sky-800 to-sky-700 p-2 shadow-md">
+        <Logotipo />
         <MenuItems />
         <CartWidget />
-      </nav>
+      </div>
       <Outlet />
     </>
   );
