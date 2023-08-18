@@ -40,6 +40,12 @@ export const getGameByGenre = async (genreId) => {
   return games;
 };
 
+// export const getGameByCategory = async (categoryId) => {
+//   const querySnapshot = await getDocs(collection(db, "Items").where("category", "==", categoryId));
+//   const games = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+//   return games;
+// };
+
 export const updateGames = async (items) => {
 
   const batch = writeBatch(db)

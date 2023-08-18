@@ -9,7 +9,7 @@ export const GameGenre = () => {
   const { genreId } = useParams();
 
   const [games, setGames] = useState([]);
-  const [genre, setGenre] = useState({});
+  const [category, setGenre] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export const GameGenre = () => {
       {games.length ? (
         <>
           <h3 className="mb-5 pb-5 text-center text-3xl font-semibold text-white">
-            Juegos de {genre.name}
+            Juegos de {category.name}
           </h3>
           <ItemListContainer products={games} />
         </>
