@@ -18,7 +18,7 @@ const routes = createBrowserRouter(
     <Route element={<Navbar />}> {}
         <Route path="/" element={<Home />} />
         <Route path="/game/:id" element={<Detail />} />
-        <Route path="/genre/:genreId" element={<GameGenre />} />
+        <Route path="/genres/:genresId" element={<GameGenre />} />
         <Route path="/cart" element={ <Cart /> }/>
         <Route path="*" element={<Home />} />
     </Route>

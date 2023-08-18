@@ -75,7 +75,7 @@ export const Cart = () => {
               </tr>
             )}
           </tbody>
-          <tfoot className="text-md bg-gray-50 uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+          <tfoot className="text-md bg-gray-50 uppercase text-gray-400 dark:bg-gray-700 dark:text-gray-400">
             <tr className="font-semibold text-gray-900 dark:text-white">
               <th scope="row" colSpan={2} className="px-6 py-3 text-base">
                 Total
@@ -89,9 +89,9 @@ export const Cart = () => {
           </tfoot>
         </table>
       </div>
-      <div className="flex justify-end p-8">
+      <div className="flex justify-center p-8">
         <button onClick={() => cleanCart()} className="px-4 py-2 bg-red-500 rounded-lg text-md font-semibold text-white hover:bg-red-500">
-          Vaciar
+          Vaciar Carrito
         </button>
       </div>
       
