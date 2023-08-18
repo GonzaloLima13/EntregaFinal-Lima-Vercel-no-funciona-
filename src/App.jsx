@@ -1,34 +1,39 @@
+import  Navbar  from "./components/Navbar/Navbar";
+import { Footer } from "./components/Footer/Footer";
 import {
   Route,
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.scss'
-import { NavBar, ItemCount, ItemListContainer, Item } from "./components/index";
 import { Detail } from "./pages/Detail"
 import { Home } from "./pages/Home"
-import { Category } from "./pages/Category"
+import { GameGenre } from "./pages/Category"
+import { CartProvider } from "./state/Cart.context";
+import { ThemeProvider } from "./state/Theme.context";
+import { Cart } from "./pages/Cart";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<NavBar />}> {}
-
+    <Route element={<Navbar />}> {}
         <Route path="/" element={<Home />} />
-         <Route path="/item/:id" element={<Detail />} />
-         <Route path="/category/:id" element={<Category />} />
-    
-
+        <Route path="/game/:id" element={<Detail />} />
+        <Route path="/genre/:genreId" element={<GameGenre />} />
+        <Route path="/cart" element={ <Cart /> }/>
+        <Route path="*" element={<Home />} />
     </Route>
   )
 );
 
 function App() {
   return (
-    <div>
-    <RouterProvider router={routes} />
-    <footer>Derechos reservados para GLGames</footer>
+    <div className="flex min-h-screen w-full flex-col items-center">
+    <ThemeProvider>
+        <CartProvider>
+          <RouterProvider router={routes} />
+          <Footer />
+        </CartProvider>
+      </ThemeProvider>
     </div>
   )
 }

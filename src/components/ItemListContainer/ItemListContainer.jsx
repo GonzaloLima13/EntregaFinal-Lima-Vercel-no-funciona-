@@ -1,17 +1,12 @@
 import { Item } from "../Item/Item"
-import "./itemlistcontainer.css";
 
-export const ItemListContainer = ({ products }) => (
-  <div className="item-list">
-    {products.map((product) => (
-      <Item
-        key={product.id}
-        id={product.id}
-        img={product.img}
-        category={product.category}
-        title={product.title}
-        price={product.price}
-      />
-    ))}
-  </div>
-);
+
+export const ItemListContainer = ({ products }) => {
+  return (
+    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6  gap-10 mx-auto cursor-pointer">
+      {products.map(game => {
+        return <Item key={game.id} id={game.id} title={game.title} category={game.category} price={game.price} img={game.img} />
+      })}
+    </section>
+  )
+}

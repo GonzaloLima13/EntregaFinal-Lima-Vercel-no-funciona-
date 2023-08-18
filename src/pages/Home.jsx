@@ -1,25 +1,28 @@
 import { useState, useEffect } from "react";
-import { getLures } from "../lib/lure.requests";
-import { ItemListContainer } from "../components";
+import { getGames } from "../lib/game.requests";
+import { Loader } from "../components/Loader/Loader"
+import { ItemListContainer } from "../components/ItemListContainer/ItemListContainer";
+import { ContentWrap } from "../components/ContentWrap/ContentWrap"
 
 export const Home = () => {
-  
-  const [products, setProducts] = useState([]); 
-  const [isLoading, setIsLoading] = useState(true);
-  
-  useEffect(() => {
-    getLures()
-    .then(res => {
-      setIsLoading(false);
-      setProducts(res)}
-      ) 
-  }, []);
+
+  const [games, setGames] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(()=>{
+
+    getGames()
+    .then(res=>{
+      setIsLoading(false)
+      setGames(res)
+    })
+  }, [])
+
+  if (isLoading) return <Loader />
 
   return (
-    <div>
-      <div className="container">
-        <ItemListContainer products={products} />
-      </div>
-    </div>
-  );
-};
+      <ContentWrap>
+        <ItemListContainer products={games} />
+      </ContentWrap> 
+  )
+}
