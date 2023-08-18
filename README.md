@@ -14,13 +14,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<<<<<<< HEAD
-  <a href="https://github.com/GonzaloLima13/EntregaFinal-Lima/blob/main/public/captura.png">
+  <a href="https://github.com/GonzaloLima13/EntregaFinal-Lima">
     <img src="src/assets/palanca.png" alt="Logo" width="80" height="80">
-=======
-  <a href="https://github.com/github_username/repo_name">
-    <img src="https://github.com/GonzaloLima13/EntregaFinal-Lima/blob/main/public/captura.png" alt="Logo" width="80" height="80">
->>>>>>> refs/remotes/origin/main
   </a>
 
 <h3 align="center">GLGames</h3>
@@ -57,7 +52,6 @@
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -65,8 +59,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Entrega final para cursada de ReactJS en Coderhouse. E-commerce orientado a videojuegos digitales de PS5.
 
