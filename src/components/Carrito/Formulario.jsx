@@ -113,10 +113,6 @@ export const FormularioCarrito = () => {
               value: true,
               message: "El nombre es requerido",
             },
-            pattern: {
-              value: /^[a-zA-ZÀ-ÿ\s]{2,20}$/,
-              message: "El nombre solo puede contener letras y espacios",
-            },
             minLength: {
               value: 2,
               message: "El nombre debe tener al menos 2 caracteres",
@@ -148,10 +144,6 @@ export const FormularioCarrito = () => {
             required: {
               value: true,
               message: "El apellido es requerido",
-            },
-            pattern: {
-              value: /^[a-zA-ZÀ-ÿ\s]{2,20}$/,
-              message: "El apellido solo puede contener letras y espacios",
             },
             minLength: {
               value: 2,
@@ -186,11 +178,7 @@ export const FormularioCarrito = () => {
             required: {
               value: true,
               message: "El correo es requerido",
-            },
-            pattern: {
-              value: /^[a-zA-Z0-9_.+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-              message: "El correo no es válido",
-            },
+            }
           })}
         />
         <label
@@ -214,10 +202,6 @@ export const FormularioCarrito = () => {
             required: {
               value: true,
               message: "Confirmar email es requerido",
-            },
-            pattern: {
-              value: /^[a-zA-Z0-9_.+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-              message: "El correo no es válido",
             },
             validate: (value) => {
               return value === watch("email") || "Los correos no coinciden";
@@ -244,10 +228,6 @@ export const FormularioCarrito = () => {
           {...register("telefono", {
             required: {
               value: false,
-            },
-            pattern: {
-              value: /^(\+?56)?(\s?)(0?9)(\s?)[98765432]\d{7}$/,
-              message: "Teléfono no válido",
             },
           })}
         />

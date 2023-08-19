@@ -29,8 +29,6 @@ export const Home = () => {
   return (
     <ContentWrap>
       <ItemListContainer products={games} />
-      
-      {CartTotal}
       <CartTotal total={total} />
     </ContentWrap>
   );

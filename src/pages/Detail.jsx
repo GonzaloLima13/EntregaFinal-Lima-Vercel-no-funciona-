@@ -58,8 +58,6 @@ export const Detail = () => {
           </article>
         </div>
       </div>
-
-      {CartTotal}
       <CartTotal total={total} />
     </ContentWrap>
   );
