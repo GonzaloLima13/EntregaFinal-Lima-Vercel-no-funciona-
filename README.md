@@ -60,7 +60,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Entrega final para cursada de ReactJS en Coderhouse. E-commerce orientado a videojuegos digitales de PS5.
+Entrega final para cursada de ReactJS en Coderhouse. E-commerce orientado a la venta de juegos digitales de PS5, siempre fui un amante de los videojuegos, fue el primer tema que se me ocurrió.
 
 <p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
@@ -84,7 +84,7 @@ Entrega final para cursada de ReactJS en Coderhouse. E-commerce orientado a vide
 
 _Instrucciones para poder descargarlo y ver el proyecto de forma local_
 
-1. Clonar el repositorio
+1. Clonar el repositorio en una carpeta
    ```sh
    git clone https://github.com/GonzaloLima13/EntregaFinal-Lima.git
    ```
