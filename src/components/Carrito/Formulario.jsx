@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
 import { useCartContext } from "../../state/Cart.context";
-import { FormErrorsMessage } from "./FormErrorsMessage";
+import { ErrorForm } from "./ErrorForm";
 import addOrder from "../../lib/orders.request";
 import { updateGames } from "../../lib/game.requests";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export const CartBuyForm = () => {
+export const FormularioCarrito = () => {
   const { cart, getTotalPriceGames, cleanCart } =
     useCartContext();
 
@@ -72,7 +72,7 @@ export const CartBuyForm = () => {
     );
 
     if(id){
-      toast(`Tu orden es: ${id}`, {
+      toast(`Tu orden creada es: ${id}`, {
         className: "bg-slate-500",
         progressClassName: "bg-sky-500",
         position: "top-center",
@@ -133,7 +133,7 @@ export const CartBuyForm = () => {
         >
           Nombre
         </label>
-        {errors.nombre && <FormErrorsMessage message={errors.nombre.message} />}
+        {errors.nombre && <ErrorForm message={errors.nombre.message} />}
       </div>
       <div className="group relative z-0 mb-6 w-full border-solid border-2 border-sky-800">
         <input
@@ -170,7 +170,7 @@ export const CartBuyForm = () => {
           Apellido
         </label>
         {errors.apellido && (
-          <FormErrorsMessage message={errors.apellido.message} />
+          <ErrorForm message={errors.apellido.message} />
         )}
       </div>
       <div className="group relative z-0 mb-6 w-full border-solid border-2 border-sky-800">
@@ -199,7 +199,7 @@ export const CartBuyForm = () => {
         >
           Email
         </label>
-        {errors.email && <FormErrorsMessage message={errors.email.message} />}
+        {errors.email && <ErrorForm message={errors.email.message} />}
       </div>
       <div className="group relative z-0 mb-6 w-full border-solid border-2 border-sky-800">
         <input
@@ -230,7 +230,7 @@ export const CartBuyForm = () => {
         >
           Confirmar email
         </label>
-        {errors.email2 && <FormErrorsMessage message={errors.email2.message} />}
+        {errors.email2 && <ErrorForm message={errors.email2.message} />}
       </div>
       <div className="group relative z-0 mb-6 w-full border-solid border-2 border-sky-800">
         <input
@@ -258,7 +258,7 @@ export const CartBuyForm = () => {
           Teléfono (No requerido)
         </label>
         {errors.telefono && (
-          <FormErrorsMessage message={errors.telefono.message} />
+          <ErrorForm message={errors.telefono.message} />
         )}
       </div>
       <button

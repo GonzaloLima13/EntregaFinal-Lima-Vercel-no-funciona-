@@ -11,14 +11,14 @@ import { Home } from "./pages/Home"
 import { GameGenre } from "./pages/Category"
 import { CartProvider } from "./state/Cart.context";
 import { ThemeProvider } from "./state/Theme.context";
-import Cart from "./pages/Cart";
+import { Cart } from "./pages/Cart";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Navbar />}> { }
       <Route path="/" element={<Home />} />
       <Route path="/game/:id" element={<Detail />} />
-      <Route path="/genres/:genresId" element={<GameGenre />} />
+      <Route path="/genres/:genreId" element={<GameGenre />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="*" element={<Home />} />
     </Route>

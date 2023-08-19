@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { getGames } from "../lib/game.requests";
 import { Loader } from "../components/Loader/Loader";
 import { ItemListContainer } from "../components/ItemListContainer/ItemListContainer";
-import ContentWrap from "../components/ContentWrap/ContentWrap";
+import { ContentWrap } from "../components/ContentWrap/ContentWrap";
 import CartTotal from '../components/CartTotal/CartTotal';
-import { useCartContext } from '../state/Cart.context'; //
+import { useCartContext } from '../state/Cart.context';
 
 export const Home = () => {
   const [games, setGames] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { cart } = useCartContext(); // Accede al contexto del carrito
-  const [total, setTotal] = useState(0); // Estado local para el total
+  const { cart } = useCartContext();
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     getGames().then((res) => {
@@ -20,7 +20,6 @@ export const Home = () => {
   }, []);
 
   useEffect(() => {
-    // Calcula el total a medida que los productos se agregan o quitan del carrito
     const updatedTotal = cart.reduce((acc, product) => acc + product.price * product.cantidad, 0);
     setTotal(updatedTotal);
   }, [cart]);

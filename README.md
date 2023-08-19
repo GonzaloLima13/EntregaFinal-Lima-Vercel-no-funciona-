@@ -62,7 +62,7 @@
 
 Entrega final para cursada de ReactJS en Coderhouse. E-commerce orientado a videojuegos digitales de PS5.
 
-<p align="right">(<a href="#readme-top"></a>Volver arriba</p>
+<p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
 
 
@@ -71,7 +71,6 @@ Entrega final para cursada de ReactJS en Coderhouse. E-commerce orientado a vide
 * [![React][React.js]][React-url]
 * [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
 * [![Firebase][Firebase]][Firebase-url]
-* [![Vercel][Vercel]][Vercel-url]
 * [![React-Hook-Form][React-Hook-Form]][React-Hook-Form-url]
 * [![React-router-dom][React-router-dom]][React-router-dom-url]
 

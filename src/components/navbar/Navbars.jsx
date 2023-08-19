@@ -1,6 +1,6 @@
 import { CartWidget } from "../CartWidget/CartWidget";
 import { Outlet } from "react-router-dom";
-import MenuItems from "../Menu/MenuItems";
+import Generos from "../Generos/Generos";
 import Logotipo from "./Logotipo";
 
 const Navbar = () => {
@@ -8,7 +8,7 @@ const Navbar = () => {
     <>
       <div className="flex w-full justify-between bg-gradient-to-b from-sky-900 via-sky-800 to-sky-700 p-2 shadow-md">
         <Logotipo />
-        <MenuItems />
+        <Generos />
         <CartWidget />
       </div>
       <Outlet />

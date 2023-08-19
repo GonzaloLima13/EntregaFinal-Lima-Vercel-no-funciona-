@@ -38,7 +38,15 @@ export const getGameById = async (id) => {
   const gameDocSnapshot = await getDoc(gameDocRef);
 
   if (gameDocSnapshot.exists()) {
-    return { id: gameDocSnapshot.id, ...gameDocSnapshot.data() };
+    const gameData = gameDocSnapshot.data();
+    const genreId = gameData.genre.id;
+    const genreData = await getGenre(genreId);
+
+    return {
+      id: gameDocSnapshot.id,
+      ...gameData,
+      genre: genreData,
+    };
   }
 
   return null;
@@ -46,17 +54,15 @@ export const getGameById = async (id) => {
 
 export const getGameByGenre = async (genreId) => {
   const games = await getGames();
-  const gamesByGenre = games.filter((game) =>
-    game.genres.some((genre) => genre.id === genreId)
-  );
-
+  const gamesByGenre = games.filter((game) => game.genre.id === genreId);
+  
   return gamesByGenre;
 };
 
-export const updateGames = async (items) => {
+export const updateGames = async (Items) => {
   const batch = writeBatch(db);
 
-  items.forEach(({ id, cantidad }) => {
+  Items.forEach(({ id, cantidad }) => {
     const gameDocRef = doc(gamesCollection, id);
     batch.update(gameDocRef, {
       stock: increment(-cantidad),
@@ -65,3 +71,4 @@ export const updateGames = async (items) => {
 
   await batch.commit();
 };
+

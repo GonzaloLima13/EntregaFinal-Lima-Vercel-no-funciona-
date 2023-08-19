@@ -9,7 +9,6 @@ const addOrder = async (order) => {
     const createdOrder = { ...order, id: orderDocRef.id };
     return createdOrder;
   } catch (error) {
-    // Manejar errores aquí si es necesario:
     console.error('Error adding order:', error);
     throw error;
   }

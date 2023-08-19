@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export const Item = ({ id, title, category, price, img }) => {
+export const Item = ({ id, title, genre, price, img }) => {
   const navigate = useNavigate();
 
   return (
@@ -11,7 +11,7 @@ export const Item = ({ id, title, category, price, img }) => {
       <img src={img} alt="Imagen del juego" className="w-full h-auto" />
       <div className="py-2 px-4 flex-[1]">
         <h3 className="font-bold text-white text-sm mb-1">{title}</h3>
-        <p className="font-bold text-xs text-slate-100/50">{category}</p>
+        <p className="font-bold text-xs text-slate-100/50">{genre}</p>
       </div>
       <div className="px-4 pb-4">
         <p className="font-bold text-white text-xl mt-auto">
